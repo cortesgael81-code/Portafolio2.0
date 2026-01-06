@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portafolio — Gael Cortés</title>
+	<link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div>
+				<strong>SOY GAEL CORTÉS</strong>
+				<div style="color:var(--muted);font-size:13px">Desarrollador · Diseñador · Creador · Futuro Ingeniero Mecatrónico</div>
+			</div>
+			<nav>
+				<a href="#about">Sobre mí</a>
+				<a href="#skills">Habilidades</a>
+				<a href="#projects">Proyectos</a>
+				<a href="#contact">Contacto</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div>
+					<div class="card">
+						<h1>Hola, soy Gael Cortés</h1>
+						<p class="lead">Me dedico a crear soluciones web que combinan buen diseño y código limpio. Trabajo con front-end, actualmente sigo tomando cursos para ser un desarrollador <a href="https://www.freecodecamp.org/espanol/news/que-es-un-desarrollador-full-stack-back-end-front-end-ingeniero-full-stack/" class="full-stack" target="_blank">Full-stack</a>.</p>
+						<p style="margin-top:12px"><a class="btn" href="#contact">Contáctame</a></p>
+					</div>
+
+					<section id="about">
+						<div class="card" style="margin-top:12px">
+							<h3>Sobre mí</h3>
+							<p style="color:var(--muted);margin-top:6px">Soy un estudiante apasionado por la tecnología y el diseño. A pesar de estar estudiando la carrera de <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa_mecatr%C3%B3nica" class="ing-mecatronica" target="_blank">Ingeniería Mecatrónica </a>, considero que no debemos de enfocarnos en una sola rama de la tecnología, por ello inicie explorando este área de constante crecimiento el cual es la de: <strong>Desarrollo Web</strong>.</p>
+						</div>
+					</section>
+
+					<section id="skills">
+						<div class="card" style="margin-top:12px">
+							<h3>Habilidades</h3>
+							<ul class="skills">
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JavaScript</li>
+								<li>React</li>
+								<li>Node.js</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+
+				<aside>
+					<div class="avatar card">
+						Foto / Avatar
+					</div>
+
+					<div class="card" style="margin-top:12px">
+						<strong>Contacto rápido</strong>
+						<div style="color:var(--muted);margin-top:8px">Correo: <a href="mailto:cortesgael81@gmail.com" style="color:var(--accent)">cortesgael81@gmail.com</a></div>
+					</div>
+				</aside>
+			</section>
+
+			<section id="projects" class="projects">
+				<h2 style="margin-top:28px">Proyectos</h2>
+				<div class="grid" style="margin-top:12px">
+					<div class="proj card">
+						<strong>Proyecto 1</strong>
+						<div style="color:var(--muted);margin-top:6px">Breve descripción del proyecto y el rol que tuviste. Enlace: <a href="#" style="color:var(--accent)">ver</a></div>
+					</div>
+					<div class="proj card">
+						<strong>Proyecto 2</strong>
+						<div style="color:var(--muted);margin-top:6px">Breve descripción. <a href="#" style="color:var(--accent)">ver</a></div>
+					</div>
+				</div>
+			</section>
+
+			<section id="contact">
+				<h2 style="margin-top:28px">Contacto</h2>
+				<div class="card" style="margin-top:12px">
+					<form id="contactForm" onsubmit="sendMail(event)">
+						<div class="row">
+							<input type="text" id="name" placeholder="Tu nombre" required>
+							<input type="email" id="email" placeholder="Tu correo" required>
+						</div>
+						<div style="margin-top:8px">
+							<textarea id="message" rows="5" placeholder="Tu mensaje" required></textarea>
+						</div>
+						<div style="margin-top:8px">
+							<button type="submit" class="btn">Enviar mensaje</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			© <span id="year"></span> Tu Nombre — Hecho con HTML y CSS • <span style="color:var(--muted)">Personaliza y despliega</span>
+		</footer>
+	</div>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+		function sendMail(e){
+			e.preventDefault();
+			const name = encodeURIComponent(document.getElementById('name').value);
+			const email = encodeURIComponent(document.getElementById('email').value);
+			const message = encodeURIComponent(document.getElementById('message').value);
+			const subject = encodeURIComponent('Contacto desde portafolio: ' + name);
+			const body = encodeURIComponent('De: ' + name + ' (%3C' + email + '%3E)\n\n') + message;
+			window.location.href = `mailto:tu@email.com?subject=${subject}&body=${body}`;
+		}
+	</script>
+</body>
+</html>
+
