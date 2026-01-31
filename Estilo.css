@@ -39,10 +39,12 @@ footer{margin:36px 0 12px 0;color:var(--muted);font-size:13px;text-align:center}
 
 .ing-mecatronica:hover{text-decoration:underline; color: orange;}
 section .projects {
-  height: 250px;
-  margin-bottom: 50px;
-  padding: 20px;
+  
+padding-bottom: 120px; 
+  margin-bottom: 0;
+
 }
+
 
 
 
